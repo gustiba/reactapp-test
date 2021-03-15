@@ -14,6 +14,10 @@ pipeline {
             }
         }
 
-    
+        // stages kedua
+        stage ('Test Project')
+            steps{
+                sh
+            }
     }
 }
