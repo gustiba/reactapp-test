@@ -15,17 +15,20 @@ pipeline {
         }
 
         // stages kedua
-        stage ('Test Project')
+        stage ('Test Project'){
             steps{
+                echo "run test script"
                 sh 'chmod +x jenkins/scripts/test.sh'
                 sh './jenkins/scripts/test.sh'
             }
+        }
 
         // stages tiga
-        stage ('Build Project')
+        stage ('Build Project'){
             steps{
                 sh 'npm run build'
             }
-
+        }
+        
     }
 }
