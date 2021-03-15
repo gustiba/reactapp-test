@@ -35,7 +35,7 @@ pipeline {
         stage ('build docker images'){
             steps{
                 script {
-                    app = docker.build("abitsugar/reactapp-test")
+                    app = docker.build("hisbu/reactapp-jcde")
                 }
             }
         }
