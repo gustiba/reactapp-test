@@ -45,7 +45,7 @@ pipeline {
         //stage lima
         stage ('test docker image'){
             steps{
-                sh 'docker run -d --rm --name testimage -p 8080:80 abitsugar/reactapp-test'
+                sh 'docker run -d --rm --name testimage -p 8080:80 hisbu/reactapp-jcde'
                 input message: "Finish test image? (Click proceed to continue)"
             }
         }
