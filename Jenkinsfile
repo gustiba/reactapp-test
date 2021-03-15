@@ -20,5 +20,12 @@ pipeline {
                 sh 'chmod +x jenkins/scripts/test.sh'
                 sh './jenkins/scripts/test.sh'
             }
+
+        // stages tiga
+        stage ('Build Project')
+            steps{
+                sh 'npm run build'
+            }
+
     }
 }
