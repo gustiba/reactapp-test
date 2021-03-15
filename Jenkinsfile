@@ -7,13 +7,13 @@ pipeline {
 
     stages {
         // stages pertama
-        stages ('Install depedencies react project'){
+        stage ('Install depedencies react project'){
             steps{
                 echo "Start install depedencies react project"
                 sh "npm install"
             }
         }
-        
+
     
     }
 }
