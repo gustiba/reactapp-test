@@ -34,9 +34,26 @@ pipeline {
         //stage empat
         stage ('build docker images'){
             steps{
-                scripts{
+                script {
                     app = docker.build("abitsugar/reactapp-test")
                 }
+            }
+        }
+
+        //=====> TEST IMAGE SEBELUM DEPLOY KE PRODUCTION
+
+        //stage lima
+        stage ('test docker image'){
+            steps{
+                sh 'docker run -d --rm --name testimage -p 8080:80 abitsugar/reactapp-test'
+                input message: "Finish test image? (Click proceed to continue)"
+            }
+        }
+
+        //stage enam
+        stage ('clean up docker'){
+            steps{
+                sh 'docker stop testimage'
             }
         }
     }
