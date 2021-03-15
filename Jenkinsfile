@@ -30,5 +30,14 @@ pipeline {
             }
         }
 
+
+        //stage empat
+        stage ('build docker images'){
+            steps{
+                scripts{
+                    app = docker.build("abitsugar/reactapp-test")
+                }
+            }
+        }
     }
 }
