@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    environment {
-        CI = true
-    }
+    // environment {
+    //     CI = true
+    // }
 
     stages {
         // stages pertama
@@ -29,6 +29,6 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        
+
     }
 }
